@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromptOps プライバシーポリシー</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+      color: #1c1c1e;
+      background: #f2f2f7;
+      padding: 24px 16px 60px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px 32px;
+    }
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e5e5ea;
+    }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #007aff, #5856d6);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+    .app-name { font-size: 24px; font-weight: 700; }
+    .app-subtitle { font-size: 14px; color: #8e8e93; margin-top: 2px; }
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .updated { font-size: 13px; color: #8e8e93; margin-bottom: 32px; }
+    h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 28px 0 10px;
+      color: #007aff;
+    }
+    p { font-size: 15px; line-height: 1.7; color: #3a3a3c; margin-bottom: 10px; }
+    ul { padding-left: 20px; margin-bottom: 10px; }
+    li { font-size: 15px; line-height: 1.7; color: #3a3a3c; margin-bottom: 4px; }
+    .highlight {
+      background: #f2f2f7;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #3a3a3c;
+    }
+    a { color: #007aff; text-decoration: none; }
+    .contact {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e5ea;
+      font-size: 14px;
+      color: #8e8e93;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="app-header">
+      <div class="app-icon">⚡</div>
+      <div>
+        <div class="app-name">PromptOps</div>
+        <div class="app-subtitle">AI エージェント管理 &amp; プロンプトライブラリ</div>
+      </div>
+    </div>
+
+    <h1>プライバシーポリシー</h1>
+    <p class="updated">最終更新日：2026年5月28日</p>
+
+    <p>PromptOps（以下「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の適切な保護に努めます。本ポリシーでは、本アプリが収集・利用する情報について説明します。</p>
+
+    <h2>1. 収集する情報</h2>
+    <p>本アプリが収集・保存する情報は以下のとおりです。</p>
+    <ul>
+      <li><strong>Sign in with Apple のユーザー ID</strong>：アカウント識別に使用します。氏名・メールアドレスは取得しません。</li>
+      <li><strong>APNs デバイストークン</strong>：Push 通知の配信に使用します。</li>
+      <li><strong>エージェントログ</strong>：ユーザーが設定した Webhook 経由で受信した AI エージェントのイベントログ。</li>
+      <li><strong>プロンプトデータ</strong>：ユーザーがアプリ内で作成・編集したプロンプトテンプレート。端末内（SwiftData）にのみ保存されます。</li>
+      <li><strong>Webhook シークレット</strong>：端末の Keychain にのみ保存されます。外部サーバーには送信されません。</li>
+    </ul>
+
+    <h2>2. 情報の利用目的</h2>
+    <ul>
+      <li>AI エージェントからのログ受信・表示</li>
+      <li>承認フローの Push 通知配信</li>
+      <li>サブスクリプション状態の管理（Pro プラン）</li>
+    </ul>
+
+    <h2>3. 情報の第三者提供</h2>
+    <div class="highlight">
+      収集した個人情報を第三者に販売・提供することは一切ありません。
+    </div>
+    <p>ただし、以下のサービスを利用しています。</p>
+    <ul>
+      <li><strong>Cloudflare Workers</strong>：Webhook エンドポイントの運用（ログの一時保存・Push 通知の中継）</li>
+      <li><strong>Apple APNs</strong>：Push 通知の配信</li>
+      <li><strong>Apple StoreKit</strong>：サブスクリプション課金の処理</li>
+    </ul>
+
+    <h2>4. データの保存期間</h2>
+    <ul>
+      <li>エージェントログ：受信から <strong>30日間</strong>（Cloudflare KV に保存後、自動削除）</li>
+      <li>プロンプトデータ：ユーザーが削除するまで端末内に保存</li>
+      <li>APNs トークン：アプリ削除またはサインアウト時に削除</li>
+    </ul>
+
+    <h2>5. 子供のプライバシー</h2>
+    <p>本アプリは 13 歳未満の方を対象としておらず、意図的に 13 歳未満の方の個人情報を収集することはありません。</p>
+
+    <h2>6. セキュリティ</h2>
+    <p>Webhook シークレットは端末の Keychain にのみ保存されます。通信は HTTPS で暗号化されます。Webhook リクエストは HMAC-SHA256 署名により検証されます。</p>
+
+    <h2>7. ポリシーの変更</h2>
+    <p>本ポリシーを変更する場合は、このページを更新します。重要な変更がある場合はアプリ内でお知らせします。</p>
+
+    <div class="contact">
+      <strong>お問い合わせ</strong><br>
+      プライバシーに関するご質問は下記までご連絡ください。<br>
+      <a href="mailto:yuki.t0624monhan@gmail.com">yuki.t0624monhan@gmail.com</a>
+    </div>
+  </div>
+</body>
+</html>
